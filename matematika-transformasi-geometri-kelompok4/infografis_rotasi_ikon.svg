@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1100" width="100%" height="100%" style="background:#ffffff; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <marker id="axis-arr" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#334155" />
+    </marker>
+    <marker id="rot-arr-90" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#047857" />
+    </marker>
+    <marker id="rot-arr-180" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#b45309" />
+    </marker>
+    <marker id="rot-arr-270" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#be123c" />
+    </marker>
+  </defs>
+
+  <!-- Header Infografis -->
+  <rect x="40" y="24" width="1020" height="75" fill="#f8fafc" stroke="#334155" stroke-width="1.8"/>
+  <text x="60" y="52" font-size="19" font-weight="900" fill="#0f172a">
+    INFOGRAFIS TRANSFORMASI GEOMETRI: ROTASI 2D IKON LAMBANG SMKN 9 SEMARANG
+  </text>
+  <text x="60" y="78" font-size="12" font-weight="600" fill="#475569">
+    Kurikulum Merdeka Fase F • XII PPLG Kelompok 4 • Pusat O(0,0) • Pemodelan Kurva Bézier Dinamis • Isometri Sempurna (Luas = 52.53 Satuan)
+  </text>
+
+  <!-- Sumbu Utama X & Y -->
+  <g>
+    <line x1="60" y1="580" x2="1040" y2="580" stroke="#334155" stroke-width="2.2" marker-end="url(#axis-arr)"/>
+    <line x1="550" y1="1040" x2="550" y2="120" stroke="#334155" stroke-width="2.2" marker-end="url(#axis-arr)"/>
+    <text x="1046" y="585" fill="#0f172a" font-size="14" font-weight="900">X</text>
+    <text x="534" y="116" fill="#0f172a" font-size="14" font-weight="900">Y</text>
+    <rect x="546" y="576" width="8" height="8" fill="#e11d48"/>
+    <text x="534" y="571" fill="#e11d48" font-size="12" font-weight="900">O(0,0)</text>
+  </g>
+
+  <!-- Busur Panah Rotasi -->
+  <path d="M 678.0 580 A 128.0 128.0 0 0 0 550 452.0" fill="none" stroke="#047857" stroke-width="2.2" stroke-dasharray="4 3" marker-end="url(#rot-arr-90)" />
+  <text x="639.6" y="490.4" fill="#047857" font-size="12" font-weight="900">+90°</text>
+
+  <path d="M 726.0 580 A 176.0 176.0 0 0 0 374.0 580" fill="none" stroke="#b45309" stroke-width="2.2" stroke-dasharray="4 3" marker-end="url(#rot-arr-180)" />
+  <text x="543.6" y="394.4" fill="#b45309" font-size="12" font-weight="900">+180°</text>
+
+  <path d="M 774.0 580 A 224.0 224.0 0 0 0 550 804.0" fill="none" stroke="#be123c" stroke-width="2.2" stroke-dasharray="4 3" marker-end="url(#rot-arr-270)" />
+  <text x="703.6" y="733.6" fill="#be123c" font-size="12" font-weight="900">+270°</text>
+
+  <!-- POSISI AWAL (0°) -->
+  <g>
+    <!-- Citra Logo Sekolah -->
+    <image href="logo_smkn9_web.png" x="601.2" y="164.0" width="281.6" height="358.4" transform="rotate(0, 550, 580)" opacity="0.85" preserveAspectRatio="none"/>
+    <!-- Path Kurva Bézier Perisai -->
+    <path d="M 742.0 522.4 C 860.4 477.6, 902.0 407.2, 882.8 205.6 Q 841.2 212.0, 822.0 164.0 L 662.0 164.0 Q 642.8 212.0, 601.2 205.6 C 582.0 407.2, 633.2 477.6, 742.0 522.4 Z" fill="rgba(29, 78, 216, 0.12)" stroke="#1d4ed8" stroke-width="2.6" stroke-linejoin="round"/>
+    <!-- Badge Status Kuadran -->
+    <g transform="translate(840, 130)">
+      <rect width="190" height="52" fill="#ffffff" stroke="#1d4ed8" stroke-width="2"/>
+      <text x="95" y="22" fill="#1d4ed8" font-size="12.5" font-weight="900" text-anchor="middle">POSISI AWAL (0°)</text>
+      <text x="95" y="40" fill="#334155" font-size="10.5" font-weight="700" text-anchor="middle" font-family="monospace">Kuadran I • (x, y)</text>
+    </g>
+  </g>
+
+  <!-- ROTASI +90° -->
+  <g>
+    <!-- Citra Logo Sekolah -->
+    <image href="logo_smkn9_web.png" x="601.2" y="164.0" width="281.6" height="358.4" transform="rotate(-90, 550, 580)" opacity="0.85" preserveAspectRatio="none"/>
+    <!-- Path Kurva Bézier Perisai -->
+    <path d="M 492.4 388.0 C 447.6 269.6, 377.2 228.0, 175.6 247.2 Q 182.0 288.8, 134.0 308.0 L 134.0 468.0 Q 182.0 487.2, 175.6 528.8 C 377.2 548.0, 447.6 496.8, 492.4 388.0 Z" fill="rgba(4, 120, 87, 0.12)" stroke="#047857" stroke-width="2.6" stroke-linejoin="round"/>
+    <!-- Badge Status Kuadran -->
+    <g transform="translate(70, 130)">
+      <rect width="190" height="52" fill="#ffffff" stroke="#047857" stroke-width="2"/>
+      <text x="95" y="22" fill="#047857" font-size="12.5" font-weight="900" text-anchor="middle">ROTASI +90°</text>
+      <text x="95" y="40" fill="#334155" font-size="10.5" font-weight="700" text-anchor="middle" font-family="monospace">Kuadran II • (-y, x)</text>
+    </g>
+  </g>
+
+  <!-- ROTASI +180° -->
+  <g>
+    <!-- Citra Logo Sekolah -->
+    <image href="logo_smkn9_web.png" x="601.2" y="164.0" width="281.6" height="358.4" transform="rotate(-180, 550, 580)" opacity="0.85" preserveAspectRatio="none"/>
+    <!-- Path Kurva Bézier Perisai -->
+    <path d="M 358.0 637.6 C 239.6 682.4, 198.0 752.8, 217.2 954.4 Q 258.8 948.0, 278.0 996.0 L 438.0 996.0 Q 457.2 948.0, 498.8 954.4 C 518.0 752.8, 466.8 682.4, 358.0 637.6 Z" fill="rgba(180, 83, 9, 0.12)" stroke="#b45309" stroke-width="2.6" stroke-linejoin="round"/>
+    <!-- Badge Status Kuadran -->
+    <g transform="translate(70, 980)">
+      <rect width="190" height="52" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+      <text x="95" y="22" fill="#b45309" font-size="12.5" font-weight="900" text-anchor="middle">ROTASI +180°</text>
+      <text x="95" y="40" fill="#334155" font-size="10.5" font-weight="700" text-anchor="middle" font-family="monospace">Kuadran III • (-x, -y)</text>
+    </g>
+  </g>
+
+  <!-- ROTASI +270° -->
+  <g>
+    <!-- Citra Logo Sekolah -->
+    <image href="logo_smkn9_web.png" x="601.2" y="164.0" width="281.6" height="358.4" transform="rotate(-270, 550, 580)" opacity="0.85" preserveAspectRatio="none"/>
+    <!-- Path Kurva Bézier Perisai -->
+    <path d="M 607.6 772.0 C 652.4 890.4, 722.8 932.0, 924.4 912.8 Q 918.0 871.2, 966.0 852.0 L 966.0 692.0 Q 918.0 672.8, 924.4 631.2 C 722.8 612.0, 652.4 663.2, 607.6 772.0 Z" fill="rgba(190, 18, 60, 0.12)" stroke="#be123c" stroke-width="2.6" stroke-linejoin="round"/>
+    <!-- Badge Status Kuadran -->
+    <g transform="translate(840, 980)">
+      <rect width="190" height="52" fill="#ffffff" stroke="#be123c" stroke-width="2"/>
+      <text x="95" y="22" fill="#be123c" font-size="12.5" font-weight="900" text-anchor="middle">ROTASI +270°</text>
+      <text x="95" y="40" fill="#334155" font-size="10.5" font-weight="700" text-anchor="middle" font-family="monospace">Kuadran IV • (y, -x)</text>
+    </g>
+  </g>
+
+  <!-- Footer Informasi Isometri -->
+  <rect x="40" y="1055" width="1020" height="34" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="550" y="1077" font-size="11.5" font-weight="800" fill="#334155" text-anchor="middle" font-family="monospace">
+    Matriks Rotasi R[O,θ] = [[cos θ, -sin θ], [sin θ, cos θ]] • Sifat Isometri: Luas Poligon = 52.53 Satuan Luas • Keliling = 31.27 Satuan Panjang
+  </text>
+</svg>
