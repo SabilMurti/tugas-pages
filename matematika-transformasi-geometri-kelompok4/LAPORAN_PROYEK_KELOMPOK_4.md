@@ -237,19 +237,19 @@ Kelompok 4 memilih Lambang Resmi SMK Negeri 9 Semarang sebagai objek transformas
 
 Kami memetakan bentuk perisai tersebut ke dalam bidang Cartesius Kuadran I dengan **5 titik sudut utama** dan **titik kontrol lengkung**:
 1. **Titik A $(6.0, 1.8)$ — Ujung Bawah Perisai:** Berada di bagian paling bawah dan runcing, menjadi poros ujung perisai.
-2. **Titik E $(10.4, 11.7)$ — Pinggang Kanan Luar:** Titik terluar di sebelah kanan perisai.
+2. **Titik B $(10.4, 11.7)$ — Pinggang Kanan Luar:** Titik terluar di sebelah kanan perisai.
 3. **Titik C $(8.5, 13.0)$ — Bahu Kanan Atas:** Sudut atas sebelah kanan perisai.
-4. **Titik B $(3.5, 13.0)$ — Bahu Kiri Atas:** Sudut atas sebelah kiri perisai. Antara titik $B$ dan $C$ membentuk garis horizontal mendatar sebagai batas mahkota atas perisai.
-5. **Titik D $(1.6, 11.7)$ — Pinggang Kiri Luar:** Titik terluar di sebelah kiri perisai, simetris sempurna dengan titik $E$ terhadap garis tengah vertikal $x = 6.0$.
+4. **Titik D $(3.5, 13.0)$ — Bahu Kiri Atas:** Sudut atas sebelah kiri perisai. Antara titik $C$ dan $D$ membentuk garis horizontal mendatar sebagai batas mahkota atas perisai.
+5. **Titik E $(1.6, 11.7)$ — Pinggang Kiri Luar:** Titik terluar di sebelah kiri perisai, simetris sempurna dengan titik $B$ terhadap garis tengah vertikal $x = 6.0$.
 
-Sisi $A \to E$ dan $D \to A$ dihubungkan oleh kurva lengkung yang dikendalikan oleh 3 titik kontrol penarik ($C_1, C_2, C_3$).
+Sisi $A \to B$ dan $E \to A$ dihubungkan oleh kurva lengkung yang dikendalikan oleh 3 titik kontrol penarik ($C_1, C_2, C_3$).
 
 ```text
                   Garis Mahkota Atas (Datar)
-                 B(3.5, 13) ──────── C(8.5, 13)
+                 D(3.5, 13) ──────── C(8.5, 13)
                 /                              \
   Pinggang Kiri                                  Pinggang Kanan
-  D(1.6, 11.7)                                    E(10.4, 11.7)
+  E(1.6, 11.7)                                    B(10.4, 11.7)
         \                                              /
          \                                            /
           \─── (Kurva Lengkung Sisi Perisai) ────────/
@@ -276,20 +276,20 @@ Seluruh titik pada posisi awal ditempatkan di Kuadran I ($x > 0$ dan $y > 0$):
 | Label Titik | Koordinat Awal $(x, y)$ | Keterangan Bagian Lambang |
 | :---: | :---: | :--- |
 | **A** | $(6.0, 1.8)$ | Ujung lancip bawah perisai |
-| **E** | $(10.4, 11.7)$ | Sudut pinggang kanan luar |
+| **B** | $(10.4, 11.7)$ | Sudut pinggang kanan luar |
 | **C** | $(8.5, 13.0)$ | Sudut bahu kanan atas |
-| **B** | $(3.5, 13.0)$ | Sudut bahu kiri atas |
-| **D** | $(1.6, 11.7)$ | Sudut pinggang kiri luar |
+| **D** | $(3.5, 13.0)$ | Sudut bahu kiri atas |
+| **E** | $(1.6, 11.7)$ | Sudut pinggang kiri luar |
 
 #### B. Titik Kontrol Lengkungan (Kurva Bézier)
 | Segmen Sisi | Label Titik Kontrol | Koordinat $(x, y)$ | Fungsi Pengendali Lengkungan |
 | :---: | :---: | :---: | :--- |
-| **Sisi A $\to$ E** | $C_1$ | $(9.7, 3.2)$ | Menarik lekukan bawah dekat ujung runcing |
+| **Sisi A $\to$ B** | $C_1$ | $(9.7, 3.2)$ | Menarik lekukan bawah dekat ujung runcing |
 | *(Pinggang Kanan)* | $C_2$ | $(11.0, 5.4)$ | Menarik lekukan tengah pinggang perisai |
-| | $C_3$ | $(10.3, 8.8)$ | Mengarahkan kelengkungan ke sudut pinggang kanan ($E$) |
-| **Sisi E $\to$ C** | $C_1$ | $(9.1, 11.5)$ | Memberikan kelengkungan halus antara pinggang dan bahu kanan |
-| **Sisi B $\to$ D** | $C_1$ | $(2.9, 11.5)$ | Memberikan kelengkungan halus antara bahu kiri dan pinggang |
-| **Sisi D $\to$ A** | $C_1$ | $(1.7, 8.8)$ | Mengarahkan kelengkungan dari pinggang kiri ke bawah |
+| | $C_3$ | $(10.3, 8.8)$ | Mengarahkan kelengkungan ke sudut pinggang kanan ($B$) |
+| **Sisi B $\to$ C** | $C_1$ | $(9.1, 11.5)$ | Memberikan kelengkungan halus antara pinggang dan bahu kanan |
+| **Sisi D $\to$ E** | $C_1$ | $(2.9, 11.5)$ | Memberikan kelengkungan halus antara bahu kiri dan pinggang |
+| **Sisi E $\to$ A** | $C_1$ | $(1.7, 8.8)$ | Mengarahkan kelengkungan dari pinggang kiri ke bawah |
 | *(Pinggang Kiri)* | $C_2$ | $(1.0, 5.4)$ | Menarik lekukan tengah pinggang kiri |
 | | $C_3$ | $(2.6, 3.2)$ | Mengarahkan lengkungan kembali ke ujung runcing bawah ($A$) |
 
@@ -312,24 +312,24 @@ Aturan perkalian:
   * $x' = (0 \times 6.0) + (-1 \times 1.8) = 0 - 1.8 = \mathbf{-1.8}$
   * $y' = (1 \times 6.0) + (0 \times 1.8) = 6.0 + 0 = \mathbf{6.0}$
   * **Koordinat Bayangan:** $\mathbf{A'(-1.8, 6.0)}$
-* **Titik E (10.4, 11.7):**
+* **Titik B (10.4, 11.7):**
   * $x' = (0 \times 10.4) + (-1 \times 11.7) = 0 - 11.7 = \mathbf{-11.7}$
   * $y' = (1 \times 10.4) + (0 \times 11.7) = 10.4 + 0 = \mathbf{10.4}$
-  * **Koordinat Bayangan:** $\mathbf{E'(-11.7, 10.4)}$
+  * **Koordinat Bayangan:** $\mathbf{B'(-11.7, 10.4)}$
 * **Titik C (8.5, 13.0):**
   * $x' = (0 \times 8.5) + (-1 \times 13.0) = 0 - 13.0 = \mathbf{-13.0}$
   * $y' = (1 \times 8.5) + (0 \times 13.0) = 8.5 + 0 = \mathbf{8.5}$
   * **Koordinat Bayangan:** $\mathbf{C'(-13.0, 8.5)}$
-* **Titik B (3.5, 13.0):**
+* **Titik D (3.5, 13.0):**
   * $x' = (0 \times 3.5) + (-1 \times 13.0) = 0 - 13.0 = \mathbf{-13.0}$
   * $y' = (1 \times 3.5) + (0 \times 13.0) = 3.5 + 0 = \mathbf{3.5}$
-  * **Koordinat Bayangan:** $\mathbf{B'(-13.0, 3.5)}$
-* **Titik D (1.6, 11.7):**
+  * **Koordinat Bayangan:** $\mathbf{D'(-13.0, 3.5)}$
+* **Titik E (1.6, 11.7):**
   * $x' = (0 \times 1.6) + (-1 \times 11.7) = 0 - 11.7 = \mathbf{-11.7}$
   * $y' = (1 \times 1.6) + (0 \times 11.7) = 1.6 + 0 = \mathbf{1.6}$
-  * **Koordinat Bayangan:** $\mathbf{D'(-11.7, 1.6)}$
+  * **Koordinat Bayangan:** $\mathbf{E'(-11.7, 1.6)}$
 
-**2. Perhitungan Titik Kontrol Lengkung (Contoh Sisi A-E):**
+**2. Perhitungan Titik Kontrol Lengkung (Contoh Sisi A-B):**
 * $C_1(9.7, 3.2) \to C_1'(-3.2, 9.7)$
 * $C_2(11.0, 5.4) \to C_2'(-5.4, 11.0)$
 * $C_3(10.3, 8.8) \to C_3'(-8.8, 10.3)$
@@ -351,24 +351,24 @@ Aturan perkalian:
   * $x'' = (-1 \times 6.0) + (0 \times 1.8) = -6.0 + 0 = \mathbf{-6.0}$
   * $y'' = (0 \times 6.0) + (-1 \times 1.8) = 0 - 1.8 = \mathbf{-1.8}$
   * **Koordinat Bayangan:** $\mathbf{A''(-6.0, -1.8)}$
-* **Titik E (10.4, 11.7):**
+* **Titik B (10.4, 11.7):**
   * $x'' = (-1 \times 10.4) + (0 \times 11.7) = -10.4 + 0 = \mathbf{-10.4}$
   * $y'' = (0 \times 10.4) + (-1 \times 11.7) = 0 - 11.7 = \mathbf{-11.7}$
-  * **Koordinat Bayangan:** $\mathbf{E''(-10.4, -11.7)}$
+  * **Koordinat Bayangan:** $\mathbf{B''(-10.4, -11.7)}$
 * **Titik C (8.5, 13.0):**
   * $x'' = (-1 \times 8.5) + (0 \times 13.0) = -8.5 + 0 = \mathbf{-8.5}$
   * $y'' = (0 \times 8.5) + (-1 \times 13.0) = 0 - 13.0 = \mathbf{-13.0}$
   * **Koordinat Bayangan:** $\mathbf{C''(-8.5, -13.0)}$
-* **Titik B (3.5, 13.0):**
+* **Titik D (3.5, 13.0):**
   * $x'' = (-1 \times 3.5) + (0 \times 13.0) = -3.5 + 0 = \mathbf{-3.5}$
   * $y'' = (0 \times 3.5) + (-1 \times 13.0) = 0 - 13.0 = \mathbf{-13.0}$
-  * **Koordinat Bayangan:** $\mathbf{B''(-3.5, -13.0)}$
-* **Titik D (1.6, 11.7):**
+  * **Koordinat Bayangan:** $\mathbf{D''(-3.5, -13.0)}$
+* **Titik E (1.6, 11.7):**
   * $x'' = (-1 \times 1.6) + (0 \times 11.7) = -1.6 + 0 = \mathbf{-1.6}$
   * $y'' = (0 \times 1.6) + (-1 \times 11.7) = 0 - 11.7 = \mathbf{-11.7}$
-  * **Koordinat Bayangan:** $\mathbf{D''(-1.6, -11.7)}$
+  * **Koordinat Bayangan:** $\mathbf{E''(-1.6, -11.7)}$
 
-**2. Perhitungan Titik Kontrol Lengkung (Contoh Sisi A-E):**
+**2. Perhitungan Titik Kontrol Lengkung (Contoh Sisi A-B):**
 * $C_1(9.7, 3.2) \to C_1''(-9.7, -3.2)$
 * $C_2(11.0, 5.4) \to C_2''(-11.0, -5.4)$
 * $C_3(10.3, 8.8) \to C_3''(-10.3, -8.8)$
@@ -390,24 +390,24 @@ Aturan perkalian:
   * $x''' = (0 \times 6.0) + (1 \times 1.8) = 0 + 1.8 = \mathbf{1.8}$
   * $y''' = (-1 \times 6.0) + (0 \times 1.8) = -6.0 + 0 = \mathbf{-6.0}$
   * **Koordinat Bayangan:** $\mathbf{A'''(1.8, -6.0)}$
-* **Titik E (10.4, 11.7):**
+* **Titik B (10.4, 11.7):**
   * $x''' = (0 \times 10.4) + (1 \times 11.7) = 0 + 11.7 = \mathbf{11.7}$
   * $y''' = (-1 \times 10.4) + (0 \times 11.7) = -10.4 + 0 = \mathbf{-10.4}$
-  * **Koordinat Bayangan:** $\mathbf{E'''(11.7, -10.4)}$
+  * **Koordinat Bayangan:** $\mathbf{B'''(11.7, -10.4)}$
 * **Titik C (8.5, 13.0):**
   * $x''' = (0 \times 8.5) + (1 \times 13.0) = 0 + 13.0 = \mathbf{13.0}$
   * $y''' = (-1 \times 8.5) + (0 \times 13.0) = -8.5 + 0 = \mathbf{-8.5}$
   * **Koordinat Bayangan:** $\mathbf{C'''(13.0, -8.5)}$
-* **Titik B (3.5, 13.0):**
+* **Titik D (3.5, 13.0):**
   * $x''' = (0 \times 3.5) + (1 \times 13.0) = 0 + 13.0 = \mathbf{13.0}$
   * $y''' = (-1 \times 3.5) + (0 \times 13.0) = -3.5 + 0 = \mathbf{-3.5}$
-  * **Koordinat Bayangan:** $\mathbf{B'''(13.0, -3.5)}$
-* **Titik D (1.6, 11.7):**
+  * **Koordinat Bayangan:** $\mathbf{D'''(13.0, -3.5)}$
+* **Titik E (1.6, 11.7):**
   * $x''' = (0 \times 1.6) + (1 \times 11.7) = 0 + 11.7 = \mathbf{11.7}$
   * $y''' = (-1 \times 1.6) + (0 \times 11.7) = -1.6 + 0 = \mathbf{-1.6}$
-  * **Koordinat Bayangan:** $\mathbf{D'''(11.7, -1.6)}$
+  * **Koordinat Bayangan:** $\mathbf{E'''(11.7, -1.6)}$
 
-**2. Perhitungan Titik Kontrol Lengkung (Contoh Sisi A-E):**
+**2. Perhitungan Titik Kontrol Lengkung (Contoh Sisi A-B):**
 * $C_1(9.7, 3.2) \to C_1'''(3.2, -9.7)$
 * $C_2(11.0, 5.4) \to C_2'''(5.4, -11.0)$
 * $C_3(10.3, 8.8) \to C_3'''(8.8, -10.3)$
@@ -447,10 +447,10 @@ Berikut adalah rangkuman seluruh koordinat titik sudut perisai lambang SMKN 9 Se
 | Label Titik | Posisi Awal $0^\circ$ [Kuadran I] | Rotasi $90^\circ$ [Kuadran II] | Rotasi $180^\circ$ [Kuadran III] | Rotasi $270^\circ$ [Kuadran IV] | Peran Anatomi Lambang |
 | :---: | :---: | :---: | :---: | :---: | :--- |
 | **A** | $(6.0, 1.8)$ | $(-1.8, 6.0)$ | $(-6.0, -1.8)$ | $(1.8, -6.0)$ | Ujung lancip bawah perisai |
-| **E** | $(10.4, 11.7)$ | $(-11.7, 10.4)$ | $(-10.4, -11.7)$ | $(11.7, -10.4)$ | Sudut pinggang kanan luar |
+| **B** | $(10.4, 11.7)$ | $(-11.7, 10.4)$ | $(-10.4, -11.7)$ | $(11.7, -10.4)$ | Sudut pinggang kanan luar |
 | **C** | $(8.5, 13.0)$ | $(-13.0, 8.5)$ | $(-8.5, -13.0)$ | $(13.0, -8.5)$ | Sudut bahu kanan atas |
-| **B** | $(3.5, 13.0)$ | $(-13.0, 3.5)$ | $(-3.5, -13.0)$ | $(13.0, -3.5)$ | Sudut bahu kiri atas |
-| **D** | $(1.6, 11.7)$ | $(-11.7, 1.6)$ | $(-1.6, -11.7)$ | $(11.7, -1.6)$ | Sudut pinggang kiri luar |
+| **D** | $(3.5, 13.0)$ | $(-13.0, 3.5)$ | $(-3.5, -13.0)$ | $(13.0, -3.5)$ | Sudut bahu kiri atas |
+| **E** | $(1.6, 11.7)$ | $(-11.7, 1.6)$ | $(-1.6, -11.7)$ | $(11.7, -1.6)$ | Sudut pinggang kiri luar |
 
 ---
 
@@ -470,30 +470,30 @@ Perpindahan ini terjadi secara mulus dan konsisten, membuktikan bahwa aljabar ma
 #### 1. Pembuktian Kekekalan Panjang Sisi (Jarak Euclidean)
 Apakah panjang sisi-sisi perisai berubah saat diputar? Mari kita hitung panjang ke-5 sisi poligon pada posisi awal ($0^\circ$) menggunakan rumus jarak $d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$:
 
-* **Sisi 1: Ujung Bawah ke Pinggang Kanan (A ke E)**
-  $$d(A, E) = \sqrt{(10.4 - 6.0)^2 + (11.7 - 1.8)^2} = \sqrt{(4.4)^2 + (9.9)^2} = \sqrt{19.36 + 98.01} = \sqrt{117.37} \approx \mathbf{10.834 \text{ satuan}}$$
+* **Sisi 1: Ujung Bawah ke Pinggang Kanan (A ke B)**
+  $$d(A, B) = \sqrt{(10.4 - 6.0)^2 + (11.7 - 1.8)^2} = \sqrt{(4.4)^2 + (9.9)^2} = \sqrt{19.36 + 98.01} = \sqrt{117.37} \approx \mathbf{10.834 \text{ satuan}}$$
 
-* **Sisi 2: Pinggang Kanan ke Bahu Kanan (E ke C)**
-  $$d(E, C) = \sqrt{(8.5 - 10.4)^2 + (13.0 - 11.7)^2} = \sqrt{(-1.9)^2 + (1.3)^2} = \sqrt{3.61 + 1.69} = \sqrt{5.30} \approx \mathbf{2.302 \text{ satuan}}$$
+* **Sisi 2: Pinggang Kanan ke Bahu Kanan (B ke C)**
+  $$d(B, C) = \sqrt{(8.5 - 10.4)^2 + (13.0 - 11.7)^2} = \sqrt{(-1.9)^2 + (1.3)^2} = \sqrt{3.61 + 1.69} = \sqrt{5.30} \approx \mathbf{2.302 \text{ satuan}}$$
 
-* **Sisi 3: Garis Mahkota Atas Datar (C ke B)**
-  $$d(C, B) = \sqrt{(3.5 - 8.5)^2 + (13.0 - 13.0)^2} = \sqrt{(-5.0)^2 + (0)^2} = \sqrt{25.00} = \mathbf{5.000 \text{ satuan}}$$
+* **Sisi 3: Garis Mahkota Atas Datar (C ke D)**
+  $$d(C, D) = \sqrt{(3.5 - 8.5)^2 + (13.0 - 13.0)^2} = \sqrt{(-5.0)^2 + (0)^2} = \sqrt{25.00} = \mathbf{5.000 \text{ satuan}}$$
 
-* **Sisi 4: Bahu Kiri ke Pinggang Kiri (B ke D)**
-  $$d(B, D) = \sqrt{(1.6 - 3.5)^2 + (11.7 - 13.0)^2} = \sqrt{(-1.9)^2 + (-1.3)^2} = \sqrt{3.61 + 1.69} = \sqrt{5.30} \approx \mathbf{2.302 \text{ satuan}}$$
+* **Sisi 4: Bahu Kiri ke Pinggang Kiri (D ke E)**
+  $$d(D, E) = \sqrt{(1.6 - 3.5)^2 + (11.7 - 13.0)^2} = \sqrt{(-1.9)^2 + (-1.3)^2} = \sqrt{3.61 + 1.69} = \sqrt{5.30} \approx \mathbf{2.302 \text{ satuan}}$$
 
-* **Sisi 5: Pinggang Kiri ke Ujung Bawah (D ke A)**
-  $$d(D, A) = \sqrt{(6.0 - 1.6)^2 + (1.8 - 11.7)^2} = \sqrt{(4.4)^2 + (-9.9)^2} = \sqrt{19.36 + 98.01} = \sqrt{117.37} \approx \mathbf{10.834 \text{ satuan}}$$
+* **Sisi 5: Pinggang Kiri ke Ujung Bawah (E ke A)**
+  $$d(E, A) = \sqrt{(6.0 - 1.6)^2 + (1.8 - 11.7)^2} = \sqrt{(4.4)^2 + (-9.9)^2} = \sqrt{19.36 + 98.01} = \sqrt{117.37} \approx \mathbf{10.834 \text{ satuan}}$$
 
 **Total Keliling Poligon Perisai Posisi Awal:**
 $$K = 10.834 + 2.302 + 5.000 + 2.302 + 10.834 = \mathbf{31.272 \text{ satuan panjang}}$$
 
 **Uji Banding pada Bayangan Rotasi $90^\circ$ (Kuadran II):**
-Mari kita hitung panjang sisi bayangan $A'(-1.8, 6.0)$ ke $E'(-11.7, 10.4)$:
-$$d(A', E') = \sqrt{(-11.7 - (-1.8))^2 + (10.4 - 6.0)^2} = \sqrt{(-9.9)^2 + (4.4)^2} = \sqrt{98.01 + 19.36} = \sqrt{117.37} \approx \mathbf{10.834 \text{ satuan}}$$
+Mari kita hitung panjang sisi bayangan $A'(-1.8, 6.0)$ ke $B'(-11.7, 10.4)$:
+$$d(A', B') = \sqrt{(-11.7 - (-1.8))^2 + (10.4 - 6.0)^2} = \sqrt{(-9.9)^2 + (4.4)^2} = \sqrt{98.01 + 19.36} = \sqrt{117.37} \approx \mathbf{10.834 \text{ satuan}}$$
 
-Serta sisi mahkota atas $C'(-13.0, 8.5)$ ke $B'(-13.0, 3.5)$:
-$$d(C', B') = \sqrt{(-13.0 - (-13.0))^2 + (3.5 - 8.5)^2} = \sqrt{0 + (-5.0)^2} = \sqrt{25.00} = \mathbf{5.000 \text{ satuan}}$$
+Serta sisi mahkota atas $C'(-13.0, 8.5)$ ke $D'(-13.0, 3.5)$:
+$$d(C', D') = \sqrt{(-13.0 - (-13.0))^2 + (3.5 - 8.5)^2} = \sqrt{0 + (-5.0)^2} = \sqrt{25.00} = \mathbf{5.000 \text{ satuan}}$$
 
 > **Kesimpulan Uji Jarak:**  
 > Panjang setiap sisi dan keliling total bangun datar bernilai **persis sama (invarian)** di setiap kuadran. Hal ini membuktikan bahwa rotasi tidak merenggangkan atau menyusutkan sisi bangun.
@@ -503,17 +503,17 @@ $$d(C', B') = \sqrt{(-13.0 - (-13.0))^2 + (3.5 - 8.5)^2} = \sqrt{0 + (-5.0)^2} =
 #### 2. Pembuktian Kekekalan Luas (Shoelace Formula / Rumus Gauss)
 Mari kita hitung luas daerah perisai segilima menggunakan metode perkalian tali sepatu Gauss.
 
-Susunan titik melingkar: $A(6.0, 1.8) \to E(10.4, 11.7) \to C(8.5, 13.0) \to B(3.5, 13.0) \to D(1.6, 11.7) \to A(6.0, 1.8)$.
+Susunan titik melingkar: $A(6.0, 1.8) \to B(10.4, 11.7) \to C(8.5, 13.0) \to D(3.5, 13.0) \to E(1.6, 11.7) \to A(6.0, 1.8)$.
 
 Tabel perkalian silang $(x_i \cdot y_{i+1}) - (x_{i+1} \cdot y_i)$:
 
 | Pasangan Titik | Suku Perkalian Silang | Hasil Hitung |
 | :---: | :---: | :---: |
-| **A ke E** | $(6.0 \times 11.7) - (10.4 \times 1.8) = 70.20 - 18.72$ | $+51.48$ |
-| **E ke C** | $(10.4 \times 13.0) - (8.5 \times 11.7) = 135.20 - 99.45$ | $+35.75$ |
-| **C ke B** | $(8.5 \times 13.0) - (3.5 \times 13.0) = 110.50 - 45.50$ | $+65.00$ |
-| **B ke D** | $(3.5 \times 11.7) - (1.6 \times 13.0) = 40.95 - 20.80$ | $+20.15$ |
-| **D ke A** | $(1.6 \times 1.8) - (6.0 \times 11.7) = 2.88 - 70.20$ | $-67.32$ |
+| **A ke B** | $(6.0 \times 11.7) - (10.4 \times 1.8) = 70.20 - 18.72$ | $+51.48$ |
+| **B ke C** | $(10.4 \times 13.0) - (8.5 \times 11.7) = 135.20 - 99.45$ | $+35.75$ |
+| **C ke D** | $(8.5 \times 13.0) - (3.5 \times 13.0) = 110.50 - 45.50$ | $+65.00$ |
+| **D ke E** | $(3.5 \times 11.7) - (1.6 \times 13.0) = 40.95 - 20.80$ | $+20.15$ |
+| **E ke A** | $(1.6 \times 1.8) - (6.0 \times 11.7) = 2.88 - 70.20$ | $-67.32$ |
 | **Jumlah Total $(\Sigma)$** | $51.48 + 35.75 + 65.00 + 20.15 - 67.32$ | $\mathbf{+105.06}$ |
 
 Maka luas daerah perisai adalah:

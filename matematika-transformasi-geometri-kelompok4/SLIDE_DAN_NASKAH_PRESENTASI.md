@@ -102,23 +102,23 @@
 * **Tampilan Konten di Layar:**
   * **Kartu Kiri (📍 5 Titik Sudut Utama Poligon):**
     * **Titik A (6.0, 1.8):** Ujung lancip paling bawah, poros utama ujung tombak perisai.
-    * **Titik E (10.4, 11.7):** Pinggang kanan terluar bingkai perisai.
+    * **Titik B (10.4, 11.7):** Pinggang kanan terluar bingkai perisai.
     * **Titik C (8.5, 13.0):** Bahu atas kanan dihubungkan garis datar horizontal.
-    * **Titik B (3.5, 13.0):** Bahu atas kiri yang sejajar mendatar dengan titik C.
-    * **Titik D (1.6, 11.7):** Pinggang kiri terluar (simetris terhadap titik E).
+    * **Titik D (3.5, 13.0):** Bahu atas kiri yang sejajar mendatar dengan titik C.
+    * **Titik E (1.6, 11.7):** Pinggang kiri terluar (simetris terhadap titik B).
   * **Kartu Kanan (🎛️ Titik Kontrol Lengkung Bézier):**
-    * Sayap kanan melengkung dari A(6.0, 1.8) ke E(10.4, 11.7) dikendalikan oleh:
+    * Sayap kanan melengkung dari A(6.0, 1.8) ke B(10.4, 11.7) dikendalikan oleh:
       * **$C_1(9.7, 3.2)$:** Menarik lengkungan awal ke arah kanan bawah.
       * **$C_2(11.0, 5.4)$:** Menjaga kelengkungan tetap proporsional.
-      * **$C_3(10.3, 8.8)$:** Menghubungkan kurva masuk mulus ke pinggang titik E.
+      * **$C_3(10.3, 8.8)$:** Menghubungkan kurva masuk mulus ke pinggang titik B.
     * **Kaidah Matematis:** Titik kontrol ikut dirotasikan secara simultan: $C'(x'_c, y'_c) = R_\alpha \cdot C(x_c, y_c)$.
 
 > **🎙️ Naskah Ujaran Presenter 2 — Durasi: 1.5 Menit:**  
 > *"Bagaimana bentuk lambang SMKN 9 ini didefinisikan ke dalam angka koordinat?*  
 > *Pada posisi awal ($0^\circ$), seluruh bentuk lambang kami letakkan di **Kuadran I** dengan 5 titik sudut utama:*  
-> *Ujung lancip perisai berada di **Titik A (6.0, 1.8)**. Pinggang kanan dan kiri berada di **Titik E (10.4, 11.7)** dan **Titik D (1.6, 11.7)**.*  
-> *Sedangkan mahkota bahu atas perisai dihubungkan oleh garis horizontal mendatar dari **Titik B (3.5, 13.0)** ke **Titik C (8.5, 13.0)**.*  
-> *Di antara titik A dan titik E, kami memasang 3 titik kontrol Bézier: $C_1, C_2,$ dan $C_3$. Titik kontrol inilah yang menarik garis lurus menjadi lekukan dinamis.*  
+> *Ujung lancip perisai berada di **Titik A (6.0, 1.8)**. Pinggang kanan dan kiri berada di **Titik B (10.4, 11.7)** dan **Titik E (1.6, 11.7)**.*  
+> *Sedangkan mahkota bahu atas perisai dihubungkan oleh garis horizontal mendatar dari **Titik D (3.5, 13.0)** ke **Titik C (8.5, 13.0)**.*  
+> *Di antara titik A dan titik B, kami memasang 3 titik kontrol Bézier: $C_1, C_2,$ dan $C_3$. Titik kontrol inilah yang menarik garis lurus menjadi lekukan dinamis.*  
 > *Saat sistem kami memutar perisai, algoritma komputasi kami menghitung posisi baru titik sudut dan titik kontrol secara bersamaan."*
 
 ---
@@ -158,10 +158,10 @@
 | Titik Sudut | Posisi Awal 0° (Kuadran I) | Rotasi +90° (Kuadran II) | Rotasi +180° (Kuadran III) | Rotasi +270° (Kuadran IV) |
 | :---: | :---: | :---: | :---: | :---: |
 | **Titik A (Poros Bawah)** | **(6.0, 1.8)** | **(-1.8, 6.0)** | **(-6.0, -1.8)** | **(1.8, -6.0)** |
-| **Titik E (Pinggang Kanan)** | **(10.4, 11.7)** | **(-11.7, 10.4)** | **(-10.4, -11.7)** | **(11.7, -10.4)** |
+| **Titik B (Pinggang Kanan)** | **(10.4, 11.7)** | **(-11.7, 10.4)** | **(-10.4, -11.7)** | **(11.7, -10.4)** |
 | **Titik C (Bahu Kanan)** | **(8.5, 13.0)** | **(-13.0, 8.5)** | **(-8.5, -13.0)** | **(13.0, -8.5)** |
-| **Titik B (Bahu Kiri)** | **(3.5, 13.0)** | **(-13.0, 3.5)** | **(-3.5, -13.0)** | **(13.0, -3.5)** |
-| **Titik D (Pinggang Kiri)** | **(1.6, 11.7)** | **(-11.7, 1.6)** | **(-1.6, -11.7)** | **(11.7, -1.6)** |
+| **Titik D (Bahu Kiri)** | **(3.5, 13.0)** | **(-13.0, 3.5)** | **(-3.5, -13.0)** | **(13.0, -3.5)** |
+| **Titik E (Pinggang Kiri)** | **(1.6, 11.7)** | **(-11.7, 1.6)** | **(-1.6, -11.7)** | **(11.7, -1.6)** |
 
 > **🎙️ Naskah Ujaran Presenter 3 — Durasi: 1 Menit:**  
 > *"Berikut adalah rangkuman matriks koordinat hasil perhitungan kami pada kelima titik sudut utama.*  
@@ -180,9 +180,9 @@
 * **Tampilan Konten di Layar:**
   * **Kartu Kiri (📏 1. Kekekalan Keliling / Jarak Euclidean):**
     * Rumus Jarak: $d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$
-    * Sisi sayap $AE = DA = \sqrt{117.37} \approx 10.834\text{ satuan}$
-    * Sisi pinggang $EC = BD = \sqrt{5.30} \approx 2.302\text{ satuan}$
-    * Sisi bahu atas $CB = \sqrt{25.00} = 5.000\text{ satuan}$
+    * Sisi sayap $AB = EA = \sqrt{117.37} \approx 10.834\text{ satuan}$
+    * Sisi pinggang $BC = DE = \sqrt{5.30} \approx 2.302\text{ satuan}$
+    * Sisi bahu atas $CD = \sqrt{25.00} = 5.000\text{ satuan}$
     * **TOTAL KELILING = 31.272 satuan panjang (100% IDENTIK di 4 Kuadran)**
   * **Kartu Kanan (📐 2. Kekekalan Luas / Shoelace Formula Gauss):**
     * Metode: Perkalian Silang Determinan Tali Sepatu Gauss
