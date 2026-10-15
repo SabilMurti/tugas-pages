@@ -95,44 +95,83 @@ Pada proyek ini, seluruh pengujian menggunakan titik pusat pangkal koordinat **$
 ```
 
 ### 2.3 Matriks Transformasi Rotasi terhadap Titik Pusat $O(0,0)$
-Secara aljabar, posisi bayangan titik $P'(x', y')$ yang diputar sebesar sudut $\alpha$ terhadap pusat $O(0,0)$ dapat dihitung menggunakan operasi perkalian matriks:
+Secara aljabar matriks, posisi bayangan titik $P'(x', y')$ yang diputar sebesar sudut $\alpha$ terhadap pusat $O(0,0)$ dihitung menggunakan rumus perkalian matriks 2D:
 
-$$\begin{pmatrix} x' \\ y' \end{pmatrix} = \begin{pmatrix} \cos\alpha & -\sin\alpha \\ \sin\alpha & \cos\alpha \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix}$$
+$$
+\begin{pmatrix} x' \\ y' \end{pmatrix} = \begin{pmatrix} \cos\alpha & -\sin\alpha \\ \sin\alpha & \cos\alpha \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix}
+$$
 
-Matriks $\begin{pmatrix} \cos\alpha & -\sin\alpha \\ \sin\alpha & \cos\alpha \end{pmatrix}$ disebut sebagai **Matriks Operator Rotasi ($R_\alpha$)**.
+Bentuk visual susunan matriks:
+```text
+  ┌ x' ┐   ┌  cos α   -sin α ┐ ┌ x ┐
+  └ y' ┘ = └  sin α    cos α ┘ └ y ┘
+```
+
+Persamaan aljabar skalar yang dihasilkan:
+* $x' = (x \cdot \cos\alpha) - (y \cdot \sin\alpha)$
+* $y' = (x \cdot \sin\alpha) + (y \cdot \cos\alpha)$
+
+Matriks rotasi $2 \times 2$ tersebut dinamakan **Matriks Operator Rotasi ($R_\alpha$)**.
 
 Berikut adalah penurunan rumus untuk sudut-sudut istimewa kuadran:
 
 #### A. Rotasi Sebesar $90^\circ$ ($R[O, 90^\circ]$) $\longrightarrow$ Memutar ke Kuadran II
 Untuk sudut $\alpha = 90^\circ$, nilai trigonometrinya adalah $\cos 90^\circ = 0$ dan $\sin 90^\circ = 1$.  
 Substitusikan nilai ke matriks operator:
-$$\begin{pmatrix} x' \\ y' \end{pmatrix} = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} (0 \cdot x) + (-1 \cdot y) \\ (1 \cdot x) + (0 \cdot y) \end{pmatrix} = \begin{pmatrix} -y \\ x \end{pmatrix}$$
 
-**Rumus Praktis Rotasi $90^\circ$:**
-$$\mathbf{(x, y) \xrightarrow{R[O, 90^\circ]} (-y, x)}$$
-*(Artinya: Tukar posisi nilai $x$ dan $y$, lalu beri tanda negatif pada nilai $x$ yang baru).*
+$$
+\begin{pmatrix} x' \\ y' \end{pmatrix} = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} (0 \cdot x) + (-1 \cdot y) \\ (1 \cdot x) + (0 \cdot y) \end{pmatrix} = \begin{pmatrix} -y \\ x \end{pmatrix}
+$$
+
+Bentuk visual perhitungan:
+```text
+  ┌ x' ┐   ┌  0  -1 ┐ ┌ x ┐   ┌ (0 · x) + (-1 · y) ┐   ┌ -y ┐
+  └ y' ┘ = └  1   0 ┘ └ y ┘ = └ (1 · x) + (0 · y)  ┘ = └  x ┘
+```
+
+> **Rumus Praktis Pemetaan Rotasi 90° ($R[O, 90^\circ]$):**  
+> **$\mathbf{P(x, y) \longrightarrow P'(-y, x)}$**  
+> *(Aturan cepat: Tukar posisi nilai $x$ dan $y$, lalu beri tanda negatif pada nilai $x$ yang baru).*
 
 ---
 
 #### B. Rotasi Sebesar $180^\circ$ ($R[O, 180^\circ]$) $\longrightarrow$ Memutar ke Kuadran III
 Untuk sudut $\alpha = 180^\circ$, nilai trigonometrinya adalah $\cos 180^\circ = -1$ dan $\sin 180^\circ = 0$.  
 Substitusikan nilai ke matriks operator:
-$$\begin{pmatrix} x'' \\ y'' \end{pmatrix} = \begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} (-1 \cdot x) + (0 \cdot y) \\ (0 \cdot x) + (-1 \cdot y) \end{pmatrix} = \begin{pmatrix} -x \\ -y \end{pmatrix}$$
 
-**Rumus Praktis Rotasi $180^\circ$:**
-$$\mathbf{(x, y) \xrightarrow{R[O, 180^\circ]} (-x, -y)}$$
-*(Artinya: Posisi $x$ dan $y$ tetap, namun kedua nilai tandanya dibalik menjadi lawan / negatif).*
+$$
+\begin{pmatrix} x'' \\ y'' \end{pmatrix} = \begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} (-1 \cdot x) + (0 \cdot y) \\ (0 \cdot x) + (-1 \cdot y) \end{pmatrix} = \begin{pmatrix} -x \\ -y \end{pmatrix}
+$$
+
+Bentuk visual perhitungan:
+```text
+  ┌ x'' ┐   ┌ -1   0 ┐ ┌ x ┐   ┌ (-1 · x) + (0 · y) ┐   ┌ -x ┐
+  └ y'' ┘ = └  0  -1 ┘ └ y ┘ = └ (0 · x) + (-1 · y) ┘ = └ -y ┘
+```
+
+> **Rumus Praktis Pemetaan Rotasi 180° ($R[O, 180^\circ]$):**  
+> **$\mathbf{P(x, y) \longrightarrow P''(-x, -y)}$**  
+> *(Aturan cepat: Posisi $x$ dan $y$ tetap, namun kedua nilai tandanya dibalik menjadi lawan / negatif).*
 
 ---
 
 #### C. Rotasi Sebesar $270^\circ$ ($R[O, 270^\circ]$) $\longrightarrow$ Memutar ke Kuadran IV
 Untuk sudut $\alpha = 270^\circ$, nilai trigonometrinya adalah $\cos 270^\circ = 0$ dan $\sin 270^\circ = -1$.  
 Substitusikan nilai ke matriks operator:
-$$\begin{pmatrix} x''' \\ y''' \end{pmatrix} = \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} (0 \cdot x) + (1 \cdot y) \\ (-1 \cdot x) + (0 \cdot y) \end{pmatrix} = \begin{pmatrix} y \\ -x \end{pmatrix}$$
 
-**Rumus Praktis Rotasi $270^\circ$:**
-$$\mathbf{(x, y) \xrightarrow{R[O, 270^\circ]} (y, -x)}$$
-*(Artinya: Tukar posisi nilai $x$ dan $y$, lalu beri tanda negatif pada nilai $y$ yang baru).*
+$$
+\begin{pmatrix} x''' \\ y''' \end{pmatrix} = \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} (0 \cdot x) + (1 \cdot y) \\ (-1 \cdot x) + (0 \cdot y) \end{pmatrix} = \begin{pmatrix} y \\ -x \end{pmatrix}
+$$
+
+Bentuk visual perhitungan:
+```text
+  ┌ x''' ┐   ┌  0   1 ┐ ┌ x ┐   ┌ (0 · x) + (1 · y)  ┐   ┌  y ┐
+  └ y''' ┘ = └ -1   0 ┘ └ y ┘ = └ (-1 · x) + (0 · y) ┘ = └ -x ┘
+```
+
+> **Rumus Praktis Pemetaan Rotasi 270° ($R[O, 270^\circ]$):**  
+> **$\mathbf{P(x, y) \longrightarrow P'''(y, -x)}$**  
+> *(Aturan cepat: Tukar posisi nilai $x$ dan $y$, lalu beri tanda negatif pada nilai $y$ yang baru).*
 
 ---
 
@@ -158,7 +197,12 @@ Titik A (Awal)  o──────────────────o Titik K
 Inilah keunggulan utama pendekatan kami:  
 Garis lengkung pada komputer tidak digambar secara sembarangan, melainkan dikendalikan oleh posisi titik koordinatnya. Ketika lambang perisai dirotasikan, **titik-titik kontrol kelengkungan ($C$) ikut diputar menggunakan rumus matriks rotasi yang sama persis dengan titik sudut utama ($A, B, C, D, E$)**:
 
-$$\begin{pmatrix} x_C' \\ y_C' \end{pmatrix} = R_\alpha \begin{pmatrix} x_C \\ y_C \end{pmatrix}$$
+```text
+  ┌ x_C' ┐   ┌  cos α   -sin α ┐ ┌ x_C ┐
+  └ y_C' ┘ = └  sin α    cos α ┘ └ y_C ┘
+```
+Atau secara ringkas:
+$$\mathbf{C'(x_C', y_C') = R_\alpha \cdot C(x_C, y_C)}$$
 
 Karena titik kontrol ikut berputar secara presisi bersama titik sudutnya, **bentuk lengkungan perisai lambang SMKN 9 tidak pernah rusak, tidak penyok, dan tidak gepeng** pada sudut putaran berapa pun.
 
@@ -253,53 +297,119 @@ Seluruh titik pada posisi awal ditempatkan di Kuadran I ($x > 0$ dan $y > 0$):
 ### 3.4 Perhitungan Eksak Perkalian Matriks Titik demi Titik
 
 #### A. Rotasi $90^\circ$ ($R[O, 90^\circ]$) $\longrightarrow (x, y) \to (-y, x)$ [Kuadran II]
-Matriks operator: $\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$
+Matriks operator:
+```text
+  ┌  0  -1 ┐
+  └  1   0 ┘
+```
+Aturan perkalian:
+* $x' = (0 \cdot x) + (-1 \cdot y) = -y$
+* $y' = (1 \cdot x) + (0 \cdot y) = x$
 
 **1. Perhitungan Titik Sudut Utama:**
-* **Titik A:** $\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} 6.0 \\ 1.8 \end{pmatrix} = \begin{pmatrix} (0 \cdot 6.0) + (-1 \cdot 1.8) \\ (1 \cdot 6.0) + (0 \cdot 1.8) \end{pmatrix} = \begin{pmatrix} -1.8 \\ 6.0 \end{pmatrix} \implies \mathbf{A'(-1.8, 6.0)}$
-* **Titik E:** $\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} 10.4 \\ 11.7 \end{pmatrix} = \begin{pmatrix} (0 \cdot 10.4) + (-1 \cdot 11.7) \\ (1 \cdot 10.4) + (0 \cdot 11.7) \end{pmatrix} = \begin{pmatrix} -11.7 \\ 10.4 \end{pmatrix} \implies \mathbf{E'(-11.7, 10.4)}$
-* **Titik C:** $\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} 8.5 \\ 13.0 \end{pmatrix} = \begin{pmatrix} (0 \cdot 8.5) + (-1 \cdot 13.0) \\ (1 \cdot 8.5) + (0 \cdot 13.0) \end{pmatrix} = \begin{pmatrix} -13.0 \\ 8.5 \end{pmatrix} \implies \mathbf{C'(-13.0, 8.5)}$
-* **Titik B:** $\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} 3.5 \\ 13.0 \end{pmatrix} = \begin{pmatrix} (0 \cdot 3.5) + (-1 \cdot 13.0) \\ (1 \cdot 3.5) + (0 \cdot 13.0) \end{pmatrix} = \begin{pmatrix} -13.0 \\ 3.5 \end{pmatrix} \implies \mathbf{B'(-13.0, 3.5)}$
-* **Titik D:** $\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} 1.6 \\ 11.7 \end{pmatrix} = \begin{pmatrix} (0 \cdot 1.6) + (-1 \cdot 11.7) \\ (1 \cdot 1.6) + (0 \cdot 11.7) \end{pmatrix} = \begin{pmatrix} -11.7 \\ 1.6 \end{pmatrix} \implies \mathbf{D'(-11.7, 1.6)}$
+* **Titik A (6.0, 1.8):**
+  * $x' = (0 \times 6.0) + (-1 \times 1.8) = 0 - 1.8 = \mathbf{-1.8}$
+  * $y' = (1 \times 6.0) + (0 \times 1.8) = 6.0 + 0 = \mathbf{6.0}$
+  * **Koordinat Bayangan:** $\mathbf{A'(-1.8, 6.0)}$
+* **Titik E (10.4, 11.7):**
+  * $x' = (0 \times 10.4) + (-1 \times 11.7) = 0 - 11.7 = \mathbf{-11.7}$
+  * $y' = (1 \times 10.4) + (0 \times 11.7) = 10.4 + 0 = \mathbf{10.4}$
+  * **Koordinat Bayangan:** $\mathbf{E'(-11.7, 10.4)}$
+* **Titik C (8.5, 13.0):**
+  * $x' = (0 \times 8.5) + (-1 \times 13.0) = 0 - 13.0 = \mathbf{-13.0}$
+  * $y' = (1 \times 8.5) + (0 \times 13.0) = 8.5 + 0 = \mathbf{8.5}$
+  * **Koordinat Bayangan:** $\mathbf{C'(-13.0, 8.5)}$
+* **Titik B (3.5, 13.0):**
+  * $x' = (0 \times 3.5) + (-1 \times 13.0) = 0 - 13.0 = \mathbf{-13.0}$
+  * $y' = (1 \times 3.5) + (0 \times 13.0) = 3.5 + 0 = \mathbf{3.5}$
+  * **Koordinat Bayangan:** $\mathbf{B'(-13.0, 3.5)}$
+* **Titik D (1.6, 11.7):**
+  * $x' = (0 \times 1.6) + (-1 \times 11.7) = 0 - 11.7 = \mathbf{-11.7}$
+  * $y' = (1 \times 1.6) + (0 \times 11.7) = 1.6 + 0 = \mathbf{1.6}$
+  * **Koordinat Bayangan:** $\mathbf{D'(-11.7, 1.6)}$
 
 **2. Perhitungan Titik Kontrol Lengkung (Contoh Sisi A-E):**
-* $C_1(9.7, 3.2) \xrightarrow{R_{90^\circ}} \mathbf{C_1'(-3.2, 9.7)}$
-* $C_2(11.0, 5.4) \xrightarrow{R_{90^\circ}} \mathbf{C_2'(-5.4, 11.0)}$
-* $C_3(10.3, 8.8) \xrightarrow{R_{90^\circ}} \mathbf{C_3'(-8.8, 10.3)}$
+* $C_1(9.7, 3.2) \to C_1'(-3.2, 9.7)$
+* $C_2(11.0, 5.4) \to C_2'(-5.4, 11.0)$
+* $C_3(10.3, 8.8) \to C_3'(-8.8, 10.3)$
 
 ---
 
 #### B. Rotasi $180^\circ$ ($R[O, 180^\circ]$) $\longrightarrow (x, y) \to (-x, -y)$ [Kuadran III]
-Matriks operator: $\begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pmatrix}$
+Matriks operator:
+```text
+  ┌ -1   0 ┐
+  └  0  -1 ┘
+```
+Aturan perkalian:
+* $x'' = (-1 \cdot x) + (0 \cdot y) = -x$
+* $y'' = (0 \cdot x) + (-1 \cdot y) = -y$
 
 **1. Perhitungan Titik Sudut Utama:**
-* **Titik A:** $\begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pmatrix} \begin{pmatrix} 6.0 \\ 1.8 \end{pmatrix} = \begin{pmatrix} -6.0 \\ -1.8 \end{pmatrix} \implies \mathbf{A''(-6.0, -1.8)}$
-* **Titik E:** $\begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pmatrix} \begin{pmatrix} 10.4 \\ 11.7 \end{pmatrix} = \begin{pmatrix} -10.4 \\ -11.7 \end{pmatrix} \implies \mathbf{E''(-10.4, -11.7)}$
-* **Titik C:** $\begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pmatrix} \begin{pmatrix} 8.5 \\ 13.0 \end{pmatrix} = \begin{pmatrix} -8.5 \\ -13.0 \end{pmatrix} \implies \mathbf{C''(-8.5, -13.0)}$
-* **Titik B:** $\begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pmatrix} \begin{pmatrix} 3.5 \\ 13.0 \end{pmatrix} = \begin{pmatrix} -3.5 \\ -13.0 \end{pmatrix} \implies \mathbf{B''(-3.5, -13.0)}$
-* **Titik D:** $\begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pmatrix} \begin{pmatrix} 1.6 \\ 11.7 \end{pmatrix} = \begin{pmatrix} -1.6 \\ -11.7 \end{pmatrix} \implies \mathbf{D''(-1.6, -11.7)}$
+* **Titik A (6.0, 1.8):**
+  * $x'' = (-1 \times 6.0) + (0 \times 1.8) = -6.0 + 0 = \mathbf{-6.0}$
+  * $y'' = (0 \times 6.0) + (-1 \times 1.8) = 0 - 1.8 = \mathbf{-1.8}$
+  * **Koordinat Bayangan:** $\mathbf{A''(-6.0, -1.8)}$
+* **Titik E (10.4, 11.7):**
+  * $x'' = (-1 \times 10.4) + (0 \times 11.7) = -10.4 + 0 = \mathbf{-10.4}$
+  * $y'' = (0 \times 10.4) + (-1 \times 11.7) = 0 - 11.7 = \mathbf{-11.7}$
+  * **Koordinat Bayangan:** $\mathbf{E''(-10.4, -11.7)}$
+* **Titik C (8.5, 13.0):**
+  * $x'' = (-1 \times 8.5) + (0 \times 13.0) = -8.5 + 0 = \mathbf{-8.5}$
+  * $y'' = (0 \times 8.5) + (-1 \times 13.0) = 0 - 13.0 = \mathbf{-13.0}$
+  * **Koordinat Bayangan:** $\mathbf{C''(-8.5, -13.0)}$
+* **Titik B (3.5, 13.0):**
+  * $x'' = (-1 \times 3.5) + (0 \times 13.0) = -3.5 + 0 = \mathbf{-3.5}$
+  * $y'' = (0 \times 3.5) + (-1 \times 13.0) = 0 - 13.0 = \mathbf{-13.0}$
+  * **Koordinat Bayangan:** $\mathbf{B''(-3.5, -13.0)}$
+* **Titik D (1.6, 11.7):**
+  * $x'' = (-1 \times 1.6) + (0 \times 11.7) = -1.6 + 0 = \mathbf{-1.6}$
+  * $y'' = (0 \times 1.6) + (-1 \times 11.7) = 0 - 11.7 = \mathbf{-11.7}$
+  * **Koordinat Bayangan:** $\mathbf{D''(-1.6, -11.7)}$
 
 **2. Perhitungan Titik Kontrol Lengkung (Contoh Sisi A-E):**
-* $C_1(9.7, 3.2) \xrightarrow{R_{180^\circ}} \mathbf{C_1''(-9.7, -3.2)}$
-* $C_2(11.0, 5.4) \xrightarrow{R_{180^\circ}} \mathbf{C_2''(-11.0, -5.4)}$
-* $C_3(10.3, 8.8) \xrightarrow{R_{180^\circ}} \mathbf{C_3''(-10.3, -8.8)}$
+* $C_1(9.7, 3.2) \to C_1''(-9.7, -3.2)$
+* $C_2(11.0, 5.4) \to C_2''(-11.0, -5.4)$
+* $C_3(10.3, 8.8) \to C_3''(-10.3, -8.8)$
 
 ---
 
 #### C. Rotasi $270^\circ$ ($R[O, 270^\circ]$) $\longrightarrow (x, y) \to (y, -x)$ [Kuadran IV]
-Matriks operator: $\begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}$
+Matriks operator:
+```text
+  ┌  0   1 ┐
+  └ -1   0 ┘
+```
+Aturan perkalian:
+* $x''' = (0 \cdot x) + (1 \cdot y) = y$
+* $y''' = (-1 \cdot x) + (0 \cdot y) = -x$
 
 **1. Perhitungan Titik Sudut Utama:**
-* **Titik A:** $\begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix} \begin{pmatrix} 6.0 \\ 1.8 \end{pmatrix} = \begin{pmatrix} 1.8 \\ -6.0 \end{pmatrix} \implies \mathbf{A'''(1.8, -6.0)}$
-* **Titik E:** $\begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix} \begin{pmatrix} 10.4 \\ 11.7 \end{pmatrix} = \begin{pmatrix} 11.7 \\ -10.4 \end{pmatrix} \implies \mathbf{E'''(11.7, -10.4)}$
-* **Titik C:** $\begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix} \begin{pmatrix} 8.5 \\ 13.0 \end{pmatrix} = \begin{pmatrix} 13.0 \\ -8.5 \end{pmatrix} \implies \mathbf{C'''(13.0, -8.5)}$
-* **Titik B:** $\begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix} \begin{pmatrix} 3.5 \\ 13.0 \end{pmatrix} = \begin{pmatrix} 13.0 \\ -3.5 \end{pmatrix} \implies \mathbf{B'''(13.0, -3.5)}$
-* **Titik D:** $\begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix} \begin{pmatrix} 1.6 \\ 11.7 \end{pmatrix} = \begin{pmatrix} 11.7 \\ -1.6 \end{pmatrix} \implies \mathbf{D'''(11.7, -1.6)}$
+* **Titik A (6.0, 1.8):**
+  * $x''' = (0 \times 6.0) + (1 \times 1.8) = 0 + 1.8 = \mathbf{1.8}$
+  * $y''' = (-1 \times 6.0) + (0 \times 1.8) = -6.0 + 0 = \mathbf{-6.0}$
+  * **Koordinat Bayangan:** $\mathbf{A'''(1.8, -6.0)}$
+* **Titik E (10.4, 11.7):**
+  * $x''' = (0 \times 10.4) + (1 \times 11.7) = 0 + 11.7 = \mathbf{11.7}$
+  * $y''' = (-1 \times 10.4) + (0 \times 11.7) = -10.4 + 0 = \mathbf{-10.4}$
+  * **Koordinat Bayangan:** $\mathbf{E'''(11.7, -10.4)}$
+* **Titik C (8.5, 13.0):**
+  * $x''' = (0 \times 8.5) + (1 \times 13.0) = 0 + 13.0 = \mathbf{13.0}$
+  * $y''' = (-1 \times 8.5) + (0 \times 13.0) = -8.5 + 0 = \mathbf{-8.5}$
+  * **Koordinat Bayangan:** $\mathbf{C'''(13.0, -8.5)}$
+* **Titik B (3.5, 13.0):**
+  * $x''' = (0 \times 3.5) + (1 \times 13.0) = 0 + 13.0 = \mathbf{13.0}$
+  * $y''' = (-1 \times 3.5) + (0 \times 13.0) = -3.5 + 0 = \mathbf{-3.5}$
+  * **Koordinat Bayangan:** $\mathbf{B'''(13.0, -3.5)}$
+* **Titik D (1.6, 11.7):**
+  * $x''' = (0 \times 1.6) + (1 \times 11.7) = 0 + 11.7 = \mathbf{11.7}$
+  * $y''' = (-1 \times 1.6) + (0 \times 11.7) = -1.6 + 0 = \mathbf{-1.6}$
+  * **Koordinat Bayangan:** $\mathbf{D'''(11.7, -1.6)}$
 
 **2. Perhitungan Titik Kontrol Lengkung (Contoh Sisi A-E):**
-* $C_1(9.7, 3.2) \xrightarrow{R_{270^\circ}} \mathbf{C_1'''(3.2, -9.7)}$
-* $C_2(11.0, 5.4) \xrightarrow{R_{270^\circ}} \mathbf{C_2'''(5.4, -11.0)}$
-* $C_3(10.3, 8.8) \xrightarrow{R_{270^\circ}} \mathbf{C_3'''(8.8, -10.3)}$
+* $C_1(9.7, 3.2) \to C_1'''(3.2, -9.7)$
+* $C_2(11.0, 5.4) \to C_2'''(5.4, -11.0)$
+* $C_3(10.3, 8.8) \to C_3'''(8.8, -10.3)$
 
 ---
 
