@@ -259,12 +259,13 @@ Sisi $A \to E$ dan $D \to A$ dihubungkan oleh kurva lengkung yang dikendalikan o
 ```
 
 ### 3.2 Alat dan Perangkat Lunak yang Digunakan
-1. **Kertas Berpetak (Millimeter Block) & Penggaris:** Alat awal untuk menentukan letak koordinat sumbu $X$ dan $Y$ lambang sekolah secara manual.
-2. **Visual Studio Code:** Editor kode pemrograman untuk menyusun aplikasi visualizer dan laporan proyek.
-3. **Bahasa Pemrograman TypeScript & Framework React:** Digunakan untuk membangun logika matematika dan perhitungan otomatis nilai matriks rotasi.
-4. **HTML5 Canvas 2D & SVG (Scalable Vector Graphics):** Perender grafik Cartesius interaktif di peramban web agar koordinat dan garis lengkung dapat dilihat secara visual dan nyata.
-5. **Python (NumPy):** Digunakan untuk memvalidasi ketepatan perkalian matriks, panjang jarak Euclidean, dan luas rumus Gauss (Shoelace Formula) hingga 4 digit desimal.
-6. **Git & GitHub Pages:** Tempat menyimpan kode sumber secara rapi dan mempublikasikan aplikasi web agar dapat dibuka oleh guru dan teman sekelas secara daring.
+1. **Kanvas Kartesius Digital & Live Coordinate Inspector (Aplikasi Web Buatan Sendiri):** Pengganti kertas millimeter block manual, di mana penentuan posisi koordinat ($X, Y$), titik sudut utama, dan titik kontrol kurva Bézier dilakukan secara digital langsung di atas kanvas interaktif dengan grid Cartesius beresolusi tinggi, fitur *drag-and-drop*, dan pembacaan koordinat *real-time*.
+2. **Visual Studio Code:** Editor kode pemrograman terintegrasi untuk menyusun kode aplikasi web visualizer, skrip kompilasi dokumen, dan naskah presentasi.
+3. **Bahasa Pemrograman TypeScript & Framework React:** Digunakan untuk membangun antarmuka web reaktif, logika transformasi matematika, serta perhitungan deterministik nilai matriks rotasi.
+4. **HTML5 Canvas 2D & SVG (Scalable Vector Graphics):** Mesin perender grafik Cartesius interaktif di peramban web agar lintasan poligon, sumbu koordinat, dan kurva lengkung dapat divisualisasikan secara nyata dan diekspor ke format vektor standar W3C.
+5. **Python (NumPy, python-docx, python-pptx):** Digunakan untuk memvalidasi ketepatan aljabar matriks, jarak Euclidean, luas poligon Gauss (Shoelace Formula), serta mengompilasi naskah ke dokumen Microsoft Word berstandar formula OMML dan berkas presentasi slide PowerPoint.
+6. **Git & GitHub Pages:** Sistem kontrol versi (*version control system*) untuk mengelola kode sumber secara kolaboratif dan mempublikasikan aplikasi web interaktif agar dapat diakses oleh guru penguji dan rekan siswa secara daring.
+7. **ONLYOFFICE Desktop Editors:** Perangkat lunak pengolah dokumen dan presentasi untuk menyusun, meninjau, dan memverifikasi tata letak berkas laporan (*.docx*) dengan formula matematis standar OMML dan berkas slide presentasi (*.pptx*).
 
 ---
 
