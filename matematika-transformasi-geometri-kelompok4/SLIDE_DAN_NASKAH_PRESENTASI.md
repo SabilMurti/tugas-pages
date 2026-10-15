@@ -88,7 +88,8 @@
 > *Dan pada rotasi $270^\circ$:*  
 > * Lambang berpindah ke Kuadran IV, titik A berada di $A'''(1.8, -6.0)$.*  
 > 
-> *Aplikasi kami juga dilengkapi fitur drag-and-drop titik secara real-time, penyalinan dan penempelan format Bézier langsung ke clipboard, serta dukungan ekspor infografis SVG beresolusi tinggi."*
+> *Aplikasi kami juga dilengkapi fitur drag-and-drop titik secara real-time, penyalinan dan penempelan format Bézier langsung ke clipboard, serta dukungan ekspor infografis SVG beresolusi tinggi.*  
+> *Bapak/Ibu guru dan teman-teman juga bisa langsung mencoba aplikasi ini melalui tautan singkat **tinyurl.com/rotasi-smkn9** atau memindai QR Code yang kami tampilkan di pojok slide."*
 
 ---
 

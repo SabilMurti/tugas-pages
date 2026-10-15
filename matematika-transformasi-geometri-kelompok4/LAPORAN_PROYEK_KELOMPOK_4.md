@@ -474,13 +474,29 @@ Aplikasi modern saat ini meninggalkan gambar bitmap berat dan beralih ke format 
 
 ## LAMPIRAN DAN TAUTAN PROYEK
 
-1. **Aplikasi Web Interaktif Siswa:**  
-   [https://sabilmurti.github.io/tugas-pages/matematika-transformasi-geometri-kelompok4/](https://sabilmurti.github.io/tugas-pages/matematika-transformasi-geometri-kelompok4/)
-2. **Repositori Kode Sumber Proyek:**  
+### 🌐 Akses Produk Aplikasi Web Interaktif
+Untuk mempermudah Bapak/Ibu guru penilai dan rekan-rekan siswa dalam menguji secara langsung simulasi rotasi kartesius, kami menyediakan tautan ringkas (*Short URL*) dan kode QR (*QR Code*) yang dapat dipindai secara instan:
+
+* **Tautan Ringkas (Short URL):** [https://tinyurl.com/rotasi-smkn9](https://tinyurl.com/rotasi-smkn9)  
+  *(Alternatif cadangan: [https://da.gd/V0UF](https://da.gd/V0UF))*
+* **Tautan Lengkap GitHub Pages:** [https://sabilmurti.github.io/tugas-pages/matematika-transformasi-geometri-kelompok4/](https://sabilmurti.github.io/tugas-pages/matematika-transformasi-geometri-kelompok4/)
+* **Pindai Kode QR (Scan Me):**
+
+![QR Code Aplikasi Web](file:///home/murtix/tugas/matematika-transformasi-geometri-kelompok4/qrcode_web_matematika.png)
+
+*(Arahkan kamera ponsel cerdas Anda ke gambar kode QR di atas untuk langsung membuka aplikasi web di peramban tanpa perlu mengetik alamat URL).*
+
+---
+
+### 📁 Daftar Berkas Pendukung Proyek
+1. **Repositori Kode Sumber Proyek:**  
    [https://github.com/SabilMurti/tugas](https://github.com/SabilMurti/tugas)
-3. **Aset Infografis Teknis 4 Kuadran:**  
+2. **Aset Infografis Teknis 4 Kuadran:**  
    [`infografis_rotasi_ikon.svg`](./infografis_rotasi_ikon.svg)
-4. **Dokumen Microsoft Word Siap Cetak:**  
+3. **Dokumen Microsoft Word Siap Cetak:**  
    [`LAPORAN_PROYEK_KELOMPOK_4.docx`](./LAPORAN_PROYEK_KELOMPOK_4.docx)
-5. **Naskah Presentasi 7–10 Menit:**  
+4. **Naskah Presentasi 7–10 Menit:**  
    [`SLIDE_DAN_NASKAH_PRESENTASI.md`](./SLIDE_DAN_NASKAH_PRESENTASI.md)
+5. **Citra Lambang Sekolah Asli:**  
+   [`SMK9.png`](./SMK9.png) / [`logo_smkn9_web.png`](./logo_smkn9_web.png)
+
